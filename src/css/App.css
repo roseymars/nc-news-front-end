@@ -15,12 +15,26 @@
   border: solid 3px red;
 }
 
+@media screen and (max-width: 600px) {
+  .navbar {
+    float: none;
+    width: 100%;
+  }
+}
+
 li {
   display: inline;
-  padding-right: 70px;
+  /* padding-right: 70px; */
   border: solid 2px black;
 }
 
+.article-container {
+  display: grid;
+  text-align: left;
+}
+
+.article-card-contents {
+}
 /* 
 .App-logo {
   height: 40vmin;
