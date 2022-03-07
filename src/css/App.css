@@ -1,9 +1,24 @@
 .App {
   text-align: center;
+  padding: 10px;
 }
 
 .Header {
   color: #ac9fbb;
+  font-family: "Lora", serif;
+  font-family: "Montserrat", sans-serif;
+  padding: 20px;
+  border: solid 3px red;
+}
+
+.navbar {
+  border: solid 3px red;
+}
+
+li {
+  display: inline;
+  padding-right: 70px;
+  border: solid 2px black;
 }
 
 /* 
