@@ -1,5 +1,6 @@
 import { React, useState, useEffect } from "react";
 import ArticleItem from "./ArticleItem";
+import Article from "./Article"
 import * as api from "./api/api-articles"
 import {useParams} from 'react-router-dom'
 // import {SearchBar, List} from './SearchBar'
@@ -45,6 +46,7 @@ const Articles = () => {
             publish_date={created_at}
             comments={comment_count}
           />
+          <Article article_id={article_id} />
           </li>
         )
       })}

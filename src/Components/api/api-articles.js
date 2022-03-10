@@ -41,6 +41,7 @@ export const getArticleById = (article_id) => {
   return newsApi
     .get(`/articles/${article_id}`)
     .then(({ data: { article } }) => {
+      console.log(article);
       return article;
     });
 };
