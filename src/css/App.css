@@ -8,6 +8,18 @@
     flex-direction: column;
   }
 }
+a:link {
+  color: #4a0785;
+}
+
+a:visited {
+  color: #880af5;
+}
+
+a:focus {
+  color: #d4b2f1;
+}
+
 .search-bar-container {
   display: flex;
   height: 17vh;
