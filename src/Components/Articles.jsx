@@ -1,11 +1,9 @@
 import { React, useState, useEffect } from "react";
 import ArticleItem from "./ArticleItem";
-import Article from "./Article"
 import * as api from "./api/api-articles"
 import {useParams} from 'react-router-dom'
 // import {SearchBar, List} from './SearchBar'
 import loading from '../5.gif'
-import VoteAdder from "./VoteAdder";
 
 
 const Articles = () => {
@@ -14,7 +12,7 @@ const Articles = () => {
   const { topic } = useParams()
 
   useEffect(() => {
-    if (topic != undefined) {
+    if (topic !== undefined) {
       api.getArticlesByTopic(topic).then((articlesByTopic) => {
        setArticles(articlesByTopic)
        setIsLoading(false)
@@ -56,7 +54,7 @@ const Articles = () => {
           />
           {/* <Article article_id={article_id}
            /> */}
-           <VoteAdder articles={articles}/>
+           {/* <VoteAdder articles={articles}/> */}
           </li>
         )
       })}

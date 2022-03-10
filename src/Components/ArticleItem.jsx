@@ -1,7 +1,6 @@
-import { React, useState } from "react";
+import { React } from "react";
 import ReadMoreReact from "read-more-react";
 import { Link } from "react-router-dom";
-import VoteAdder from "./VoteAdder";
 
 const ArticleItem = ({
   title,
@@ -15,7 +14,6 @@ const ArticleItem = ({
 }) => {
   //   const [articleItem, setArticleItem] = useState([
   //   ]);
-  const [disable, setDisable] = useState(false);
   const formattedDate = publish_date.slice(0, 10);
 
   return (
@@ -34,6 +32,7 @@ const ArticleItem = ({
           <dt className="topic">topic: {topic}</dt>
           <dt className="user">author: {author}</dt>
           <dt>Votes: {votes}</dt>
+          <Link to={`/articles/${article_id}`}>(view full article to vote)</Link>
           <dt>Date of publish: {formattedDate}</dt>
           <dt>Comments: {comments}</dt>
           {/* <VoteAdder votes={votes} article_id={article_id} /> */}

@@ -20,6 +20,11 @@ a:focus {
   color: #d4b2f1;
 }
 
+.login-user-avatar {
+  border-radius: 20px;
+  border-color: white;
+}
+
 .search-bar-container {
   display: flex;
   height: 17vh;
@@ -32,10 +37,6 @@ a:focus {
 .dropdown-sort-by {
   padding: 5px;
   border-radius: 10px;
-}
-
-.loading {
-  justify-content: center;
 }
 
 #search-bar-header {
@@ -65,18 +66,27 @@ a:focus {
   background-color: lightgray;
 }
 
+.vote-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 20px;
+}
+
 #article-vote-btn {
   border-radius: 20px;
   background-color: #d1e6ba;
   border-color: #d1e6ba;
-  padding: 0.25rem;
+  padding: 0.5rem;
+  padding-top: 0.25rem;
 }
 
 #article-downvote-btn {
-  border-radius: 20px;
+  border-radius: 50px;
+  border-width: 2px;
   background-color: #cd7d7d;
   border-color: #cd7d7d;
-  padding: 0.25rem;
+  padding: 0.5rem;
 }
 #header-home-link {
   color: black;

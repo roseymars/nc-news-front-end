@@ -46,12 +46,7 @@ export const getArticleById = (article_id) => {
 };
 
 export const patchArticles = (article_id, votes) => {
-  return newsApi
-    .patch(`/articles/${article_id}`, { inc_votes: votes })
-    .then(({ data: { article } }) => {
-      console.log(article);
-    })
-    .catch((error) => console.log(error.response.request._response));
+  return newsApi.patch(`/articles/${article_id}`, { inc_votes: votes });
 };
 
 // export const getAllUsernames = () => {
