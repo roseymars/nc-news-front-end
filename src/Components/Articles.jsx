@@ -44,6 +44,7 @@ const Articles = () => {
         return (
           <li key={article_id}>
           <ArticleItem
+            article_id={article_id}
             title={title}
             topic={topic}
             author={author}
@@ -52,7 +53,8 @@ const Articles = () => {
             publish_date={created_at}
             comments={comment_count}
           />
-          <Article article_id={article_id} />
+          {/* <Article article_id={article_id}
+           /> */}
           </li>
         )
       })}
