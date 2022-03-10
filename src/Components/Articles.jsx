@@ -5,6 +5,7 @@ import * as api from "./api/api-articles"
 import {useParams} from 'react-router-dom'
 // import {SearchBar, List} from './SearchBar'
 import loading from '../5.gif'
+import VoteAdder from "./VoteAdder";
 
 
 const Articles = () => {
@@ -55,6 +56,7 @@ const Articles = () => {
           />
           {/* <Article article_id={article_id}
            /> */}
+           <VoteAdder articles={articles}/>
           </li>
         )
       })}

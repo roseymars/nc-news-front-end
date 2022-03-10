@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import ReadMoreReact from "read-more-react";
 import { Link } from "react-router-dom";
+import VoteAdder from "./VoteAdder";
 
 const ArticleItem = ({
   title,
@@ -35,7 +36,8 @@ const ArticleItem = ({
           <dt>Votes: {votes}</dt>
           <dt>Date of publish: {formattedDate}</dt>
           <dt>Comments: {comments}</dt>
-          <button
+          {/* <VoteAdder votes={votes} article_id={article_id} /> */}
+          {/* <button
             type="button"
             disabled={disable}
             onClick={() => setDisable(true)}
@@ -45,7 +47,7 @@ const ArticleItem = ({
           </button>
           <button type="button" id="article-downvote-btn">
             Downvote
-          </button>
+          </button> */}
         </dl>
       </div>
     </article>
