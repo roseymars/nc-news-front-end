@@ -9,7 +9,7 @@ const [disable, setDisable] = useState(false)
   return (
     <article className="article-card">
       {/* so can link to individual article, create api func:- */}
-      <Link to={`/article/${article_id}`}>
+      <Link to={`/articles/${article_id}`}>
         <h3 className="article-header">{title}</h3>
       </Link>
     <div className="article-item">
