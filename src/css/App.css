@@ -17,6 +17,11 @@
   row-gap: 10px;
 }
 
+.dropdown-sort-by {
+  padding: 5px;
+  border-radius: 10px;
+}
+
 .loading {
   justify-content: center;
 }

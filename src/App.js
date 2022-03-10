@@ -19,7 +19,6 @@ const App = () => {
         <Route path="/topics/:topic" element={<Articles />} />
         <Route path="/articles/:article_id" element={<Article />} />
       </Routes>
-      {/* <Articles /> */}
       <Footer />
     </div>
   );
