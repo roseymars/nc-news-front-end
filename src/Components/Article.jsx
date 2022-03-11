@@ -3,6 +3,7 @@ import * as api from "./api/api-articles";
 import { useParams } from "react-router-dom";
 import loading from "../5.gif"
 import VoteAdder from "./VoteAdder";
+import Comments from "./Comments";
 
 
 const Article = () => {
@@ -34,6 +35,7 @@ const Article = () => {
         <dt>Date of publish: {created_at.slice(0,10)}</dt>
         <dt>Comments: {comment_count}</dt>
         <VoteAdder votes={votes}/>
+        <Comments />
                 {/* <button type="button" disabled={disable} onClick={() => setDisable(true)} id="article-vote-btn">Upvote</button> 
          <button type="button" id="article-downvote-btn">Downvote</button> */}
       </dl>

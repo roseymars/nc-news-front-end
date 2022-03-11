@@ -49,8 +49,27 @@ export const patchArticles = (article_id, votes) => {
   return newsApi.patch(`/articles/${article_id}`, { inc_votes: votes });
 };
 
+export const getCommentsByArticleId = (article_id) => {
+  return newsApi
+    .get(`/articles/${article_id}/comments`, { params: { article_id } })
+    .then(({ data: { comments } }) => {
+      return comments;
+    });
+};
+
+export const postCommentByArticleId = (article_id) => {
+  return newsApi.post(`/articles/${article_id}/comments`, {
+    params: { article_id },
+  });
+  // .then(({ data: { comments } }) => {
+  //   return comments;
+  // });
+};
+
 // export const getAllUsernames = () => {
 //   return newsApi.get("/users").then((res) => {
 //     return res.data.user;
 //   });
 // };
+
+// if user === loggedInUser then allow access to vote and comment

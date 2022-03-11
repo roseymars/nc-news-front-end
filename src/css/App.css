@@ -147,11 +147,12 @@ a:focus {
 }
 
 li {
-  display: inline;
-  /* padding-right: 70px; */
-  border: solid 2px black;
-  padding: 5px;
-  border-radius: 50rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #e6d3ec;
+  padding: 10px;
+  padding-bottom: 10px;
+  /* border-radius: 30rem; */
   margin: 0.25rem;
 }
 
@@ -180,9 +181,13 @@ li {
   border: solid 1px;
   border-radius: 20px;
 }
+.articles-list {
+  padding-bottom: 10px;
+}
 
-/* .article-card-contents {
-} */
+.article-card {
+  padding: 5px;
+}
 
 Footer {
   font-size: small;

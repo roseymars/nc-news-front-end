@@ -17,6 +17,7 @@ const ArticleItem = ({
   const formattedDate = publish_date.slice(0, 10);
 
   return (
+    <div className="article-item-home-page">
     <article className="article-card">
       {/* so can link to individual article, create api func:- */}
       <Link to={`/articles/${article_id}`}>
@@ -25,14 +26,13 @@ const ArticleItem = ({
       <div className="article-item">
         <dl>
           <ReadMoreReact
-            style={{ color: "red" }}
             text={body}
             readMoreText="<click here to read more>"
           />
           <dt className="topic">topic: {topic}</dt>
           <dt className="user">author: {author}</dt>
           <dt>Votes: {votes}</dt>
-          <Link to={`/articles/${article_id}`}>(view full article to vote)</Link>
+          <Link className="view-to-vote-link" to={`/articles/${article_id}`}>(view full article to vote)</Link>
           <dt>Date of publish: {formattedDate}</dt>
           <dt>Comments: {comments}</dt>
           {/* <VoteAdder votes={votes} article_id={article_id} /> */}
@@ -50,6 +50,7 @@ const ArticleItem = ({
         </dl>
       </div>
     </article>
+    </div>
   );
 };
 
