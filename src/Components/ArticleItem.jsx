@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React } from "react";
 import ReadMoreReact from "read-more-react";
 import { Link } from "react-router-dom";
 
@@ -14,10 +14,10 @@ const ArticleItem = ({
 }) => {
   //   const [articleItem, setArticleItem] = useState([
   //   ]);
-  const [disable, setDisable] = useState(false);
   const formattedDate = publish_date.slice(0, 10);
 
   return (
+    <div className="article-item-home-page">
     <article className="article-card">
       {/* so can link to individual article, create api func:- */}
       <Link to={`/articles/${article_id}`}>
@@ -26,16 +26,17 @@ const ArticleItem = ({
       <div className="article-item">
         <dl>
           <ReadMoreReact
-            style={{ color: "red" }}
             text={body}
             readMoreText="<click here to read more>"
           />
           <dt className="topic">topic: {topic}</dt>
           <dt className="user">author: {author}</dt>
-          <dt>Votes: {votes}</dt>
+          <dt>Likes: {votes}</dt>
+          <Link className="view-to-vote-link" to={`/articles/${article_id}`}>(like this post? view full article to show your love)</Link>
           <dt>Date of publish: {formattedDate}</dt>
           <dt>Comments: {comments}</dt>
-          <button
+          {/* <VoteAdder votes={votes} article_id={article_id} /> */}
+          {/* <button
             type="button"
             disabled={disable}
             onClick={() => setDisable(true)}
@@ -45,10 +46,11 @@ const ArticleItem = ({
           </button>
           <button type="button" id="article-downvote-btn">
             Downvote
-          </button>
+          </button> */}
         </dl>
       </div>
     </article>
+    </div>
   );
 };
 

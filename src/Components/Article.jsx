@@ -1,24 +1,23 @@
 import React, { useState, useEffect } from "react";
 import * as api from "./api/api-articles";
 import { useParams } from "react-router-dom";
-import ArticleItem from "./ArticleItem";
 import loading from "../5.gif"
+import VoteAdder from "./VoteAdder";
+import Comments from "./Comments";
 
 
 const Article = () => {
   const [articleById, setArticleById] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [disable, setDisable] = useState(false);
+//   const [disable, setDisable] = useState(false);
   const { article_id } = useParams();
 
   // isLoading
   useEffect(() => {
-    if (article_id != undefined)
+    if (article_id !== undefined)
       api.getArticleById(article_id).then((articleById) => {
-        console.log(articleById, "above set");
         setArticleById(articleById);
         setIsLoading(false)
-        console.log(articleById, "below set");
         return articleById;
       });
   }, []);
@@ -32,11 +31,13 @@ const Article = () => {
         <dt>{body} </dt>
         <dt className="topic">topic: {topic}</dt>
         <dt className="user">author: {author}</dt>
-        <dt>Votes: {votes}</dt>
+        {/* <dt>Votes: {votes}</dt> */}
         <dt>Date of publish: {created_at.slice(0,10)}</dt>
         <dt>Comments: {comment_count}</dt>
-        <button type="button" disabled={disable} onClick={() => setDisable(true)} id="article-vote-btn">Upvote</button> 
-         <button type="button" id="article-downvote-btn">Downvote</button>
+        <VoteAdder votes={votes}/>
+        <Comments />
+                {/* <button type="button" disabled={disable} onClick={() => setDisable(true)} id="article-vote-btn">Upvote</button> 
+         <button type="button" id="article-downvote-btn">Downvote</button> */}
       </dl>
     </div>
 

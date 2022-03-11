@@ -1,6 +1,5 @@
 import { React, useState, useEffect } from "react";
 import ArticleItem from "./ArticleItem";
-import Article from "./Article"
 import * as api from "./api/api-articles"
 import {useParams} from 'react-router-dom'
 // import {SearchBar, List} from './SearchBar'
@@ -13,7 +12,7 @@ const Articles = () => {
   const { topic } = useParams()
 
   useEffect(() => {
-    if (topic != undefined) {
+    if (topic !== undefined) {
       api.getArticlesByTopic(topic).then((articlesByTopic) => {
        setArticles(articlesByTopic)
        setIsLoading(false)
@@ -30,13 +29,15 @@ const Articles = () => {
 }, [topic])
 
   return isLoading ? <img className="loading" src={loading} alt="spinning loading wheel icon to signify page is loading"></img> : 
-    <div>
+    <div className="articles-list">
+
       <select className="dropdown-sort-by">
       <option value="newest first">articles (newest)</option>
       <option value="oldest first">articles (oldest)</option>
         <option value="votes">votes</option>
         <option value="comments">comments</option>
       </select>
+
        <p>Here is your latest scoop...</p>
       {/* <SearchBar articles={articles}/>
       <List articles={articles} /> */}
@@ -55,6 +56,7 @@ const Articles = () => {
           />
           {/* <Article article_id={article_id}
            /> */}
+           {/* <VoteAdder articles={articles}/> */}
           </li>
         )
       })}
