@@ -45,14 +45,14 @@ const VoteAdder = ({ votes }) => {
       <div className="react-heart" style={{ width: "2rem" }}>
       <Heart isActive={active} onClick={() => { setActive(!active); handleIncrement(1);}} />
       </div>
-      <button
+      {/* <button
         disabled={voteIncreaser > 0}
         onClick={() => handleIncrement(1)}
         id="article-vote-btn"
       >
         <FontAwesomeIcon icon={faThumbsUp} />
-      </button>
-      <p>Votes: {votes + voteIncreaser}</p>
+      </button> */}
+      <p>Likes: {votes + voteIncreaser}</p>
       {/* <button
         disabled={voteIncreaser === 0}
         onClick={() => handleIncrement(-1)}

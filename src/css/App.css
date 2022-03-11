@@ -12,6 +12,10 @@ a:link {
   color: #4a0785;
 }
 
+.react-heart {
+  padding: 10px;
+}
+
 a:visited {
   color: #880af5;
 }

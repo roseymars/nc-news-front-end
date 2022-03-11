@@ -31,8 +31,8 @@ const ArticleItem = ({
           />
           <dt className="topic">topic: {topic}</dt>
           <dt className="user">author: {author}</dt>
-          <dt>Votes: {votes}</dt>
-          <Link className="view-to-vote-link" to={`/articles/${article_id}`}>(view full article to vote)</Link>
+          <dt>Likes: {votes}</dt>
+          <Link className="view-to-vote-link" to={`/articles/${article_id}`}>(like this post? view full article to show your love)</Link>
           <dt>Date of publish: {formattedDate}</dt>
           <dt>Comments: {comments}</dt>
           {/* <VoteAdder votes={votes} article_id={article_id} /> */}
