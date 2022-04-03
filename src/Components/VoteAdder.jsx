@@ -9,7 +9,8 @@ import { userContext } from "./UserContext";
 // what need to do: sort the patch req so that database is NOT updated when post is UNLIKED, as votes are being increased
 // on both like and unlike clicks
 
-const VoteAdder = ({ votes }, author) => {
+const VoteAdder = ({ votes, author }) => {
+  console.log(author)
   const [voteIncreaser, setVoteIncreaser] = useState(0);
   const [hasVoted, setHasVoted] = useState(false)
   const [active, setActive] = useState(false)
@@ -42,7 +43,7 @@ const VoteAdder = ({ votes }, author) => {
     // also add error message for if vote doesn't register eg device offline
     // need active className so can unlike also
     <div className="vote-card">
-      <div className="react-heart" hidden={author !== loggedInUser.username} style={{ width: "2rem" }}>
+      <div className="react-heart" hidden={author === loggedInUser.username} style={{ width: "2rem" }}>
       <Heart isActive={active} onClick={() => { setActive(!active); hasVoted ? handleIncrement(-1) : handleIncrement(1) ;}} />
       </div>
       {/* <button
