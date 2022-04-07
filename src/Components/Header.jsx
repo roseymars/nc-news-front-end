@@ -1,23 +1,36 @@
 import React from "react";
-// import { useContext } from "react";
-// import { userContext } from "./UserContext"
+import { useContext } from "react";
+import { userContext } from "./UserContext"
 import {Link} from 'react-router-dom'
 
-// To consider: initial avatar image says "login" then changes to user icon. Less confusing
-// for the user as it's clear where to log in
+
 const Header = () => {
-  // const { loggedInUser } = useContext(userContext)
+  const { loggedInUser } = useContext(userContext)
+
+      const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      const userTime = new Date().toLocaleString("en-US", {timeZone: `${tz}`})
+      const displayTime = [...userTime].slice(10, 14).join('') 
+      const pmAm = [...userTime].slice(18, 20).join('')
+      const usersTime = displayTime + pmAm
+
   return (
+    <>
     <div className="Header">
-      <h1>NC News</h1>
-      <h2>welcome, it's time to scroll!</h2>
-      {/* will make button below into link soon */}
-      <button className="login-user-avatar"> <img src="https://cdn.pixabay.com/photo/2021/06/07/13/46/user-6318008_640.png" alt="Logged in User's avatar"/></button>
+      <div className="header-contents">
+      <img src={require("../assets/NC News-logos_transparent.png")} id="nc-news-logo" alt="NC News"></img>
+      <div className="top-right-header">
+      <Link to="/users" className="profile-page">
+      <button className="login-user-avatar"> <img src="https://cdn.pixabay.com/photo/2021/06/07/13/46/user-6318008_640.png" alt="Logged in User's avatar" className="header-avatar-img"/></button>
+      </Link>
       <Link to="/" id="header-home-link">
         Home (back to all articles)
       </Link>
-      {/* <span>{loggedInUser.username}</span> */}
+      { loggedInUser.username.length > 0 ? (<span>Logged in as: {loggedInUser.username}</span>) : <span>Not logged in!</span>}
+      </div>
+      </div>
     </div>
+    <span id="user-time">The time is {usersTime} </span>
+  </>
   );
 };
 

@@ -4,26 +4,24 @@ const newsApi = axios.create({
   baseURL: "https://my-nc-news-project.herokuapp.com/api",
 });
 
-export const getAllArticles = () => {
+export const getAllArticles = (sort_by, order, topic) => {
   return newsApi
-    .get("/articles")
+    .get(`/articles`, { params: { sort_by, order, topic } })
     .then(({ data: { articles } }) => {
       return articles;
-    })
-    .catch((err) => {
-      console.log(err);
     });
+  // .catch((err) => {
+  //   console.log(err);
+  // });
 };
 
 export const getAllTopics = () => {
-  return newsApi
-    .get("/topics")
-    .then(({ data: { topics } }) => {
-      return topics;
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  return newsApi.get(`/topics`).then(({ data: { topics } }) => {
+    return topics;
+  });
+  // .catch((err) => {
+  //   console.log(err);
+  // });
 };
 
 export const getArticlesByTopic = (topic) => {
@@ -31,10 +29,10 @@ export const getArticlesByTopic = (topic) => {
     .get(`/articles?topic=${topic}`)
     .then(({ data: { articles } }) => {
       return articles;
-    })
-    .catch((err) => {
-      console.log(err);
     });
+  // .catch((err) => {
+  //   console.log(err);
+  // });
 };
 
 export const getArticleById = (article_id) => {
@@ -57,19 +55,34 @@ export const getCommentsByArticleId = (article_id) => {
     });
 };
 
-export const postCommentByArticleId = (article_id) => {
-  return newsApi.post(`/articles/${article_id}/comments`, {
-    params: { article_id },
-  });
-  // .then(({ data: { comments } }) => {
-  //   return comments;
+export const postCommentByArticleId = (article_id, body) => {
+  return newsApi
+    .post(`/articles/${article_id}/comments`, body)
+    .then(({ data: { comment } }) => {
+      return comment;
+    });
+  // .catch((err) => {
+  //   console.log(err);
   // });
 };
+// .then(({ data: { comments } }) => {
+//   return comments;
+// });
 
-// export const getAllUsernames = () => {
-//   return newsApi.get("/users").then((res) => {
-//     return res.data.user;
-//   });
-// };
+export const getAllUsernames = () => {
+  return newsApi.get(`/users`).then(({ data: { users } }) => {
+    return users;
+  });
+};
 
-// if user === loggedInUser then allow access to vote and comment
+export const getOldestArticles = () => {
+  return newsApi.get(`/articles?order=ASC`).then(({ data: { articles } }) => {
+    return articles;
+  });
+};
+
+export const deleteCommentByCommentId = (comment_id) => {
+  return newsApi.delete(`/comments/${comment_id}`).then((res) => {
+    console.log(res);
+  });
+};

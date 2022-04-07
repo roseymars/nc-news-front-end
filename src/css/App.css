@@ -8,12 +8,96 @@
     flex-direction: column;
   }
 }
+
+#user-time {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.scrollTop {
+  position: fixed;
+  width: 100%;
+  bottom: 20px;
+  align-items: center;
+  height: 20px;
+  justify-content: center;
+  z-index: 1000;
+  cursor: pointer;
+  animation: fadeIn 0.3s;
+  transition: opacity 0.4s;
+  opacity: 0.5;
+}
+
+.scrollTop:hover {
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+.loading {
+  /* display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+}
+.comment-container {
+  padding: 10px;
+  margin: 1px;
+}
+
+
+#delete-comment-btn {
+  color: white;
+  padding: 1px;
+  margin-bottom: 15px;
+  background-color: red;
+  border-color: red;
+  border-style: double;
+  border-radius: 5px;
+}
+
+.navbar-topics {
+  border: 10px;
+  border-color: black;
+}
+
+.error-redirection {
+  margin: 50px;
+  justify-self: center;
+}
+
+.error-page-header {
+  align-items: flex-end;
+  align-self: center;
+}
+
+.error-page-container {
+  margin: 5%;
+  padding: 1%;
+  background-color: #e2d6ef;
+  border-radius: 50px;
+  width: 50%;
+  display: flex;
+  /* align-items: flex-start; */
+  justify-content: center;
+}
+
 a:link {
   color: #4a0785;
 }
 
 .react-heart {
   padding: 10px;
+}
+
+.profile-page {
+  padding: 20px;
 }
 
 a:visited {
@@ -29,6 +113,32 @@ a:focus {
   border-color: white;
 }
 
+#nc-news-logo {
+  max-width: 350px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.user-gallery {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+#user-profile-container {
+  background-color: #d4b2f1;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.user-login-btn {
+  color: #4a0785;
+  border-color: #d4b2f1;
+  border-radius: 5px;
+  margin: 10px;
+  background-color: white;
+}
+
 .search-bar-container {
   display: flex;
   height: 17vh;
@@ -38,9 +148,31 @@ a:focus {
   row-gap: 10px;
 }
 
+.user-list-avatar {
+  justify-content: center;
+}
+
 .dropdown-sort-by {
+  margin-right: 25px;
   padding: 5px;
   border-radius: 10px;
+  background-color: yellow;
+}
+
+.dropdown-order-by {
+  margin-right: 25px;
+  padding: 2px;
+  border-radius: 10px;
+  background-color: yellow;
+}
+
+.user-list-avatar {
+  max-width: 30px;
+  padding: 15px;
+  border-radius: 40px;
+  display: flex;
+  object-fit: cover;
+  align-items: flex-end;
 }
 
 #search-bar-header {
@@ -94,7 +226,8 @@ a:focus {
 }
 #header-home-link {
   color: black;
-  padding: 20px;
+  padding: 5px;
+  padding-right: 15px;
   text-decoration-color: purple;
 }
 .navbar {
@@ -103,18 +236,31 @@ a:focus {
   justify-content: center;
 }
 
+.nav-bar-box {
+  border-color: black;
+  border-width: 2px;
+}
+
+.deleted-comment {
+  width: 100%;
+}
+
 .Header {
-  color: #ac9fbb;
+  color: black;
   font-family: "Lora", serif;
   font-family: "Montserrat", sans-serif;
   padding: 10px;
   /* border: solid 3px red; */
   text-align: start;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 .navbar {
   display: inline-flex;
   padding: 10px;
+  padding-bottom: 35px;
   width: 25px;
   height: 25px;
 }
@@ -125,12 +271,15 @@ a:focus {
   align-items: center;
   justify-content: center;
   font-size: 2rem;
+  border-width: 10px;
 }
 
 .topic-names {
   padding-right: 50px;
   padding-left: 10px;
   text-decoration: lightgray;
+  border-color: black;
+  border-width: 10px;
 }
 
 @media screen and (max-width: 600px) {
@@ -148,6 +297,11 @@ a:focus {
     padding-left: 5px;
     text-decoration: lightgray;
   }
+  .user-gallery {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 li {
@@ -156,8 +310,31 @@ li {
   background-color: #e6d3ec;
   padding: 10px;
   padding-bottom: 10px;
-  /* border-radius: 30rem; */
   margin: 0.25rem;
+}
+
+.comments-list {
+  background-color: #e6d3ec;
+  padding: 10px;
+  padding-bottom: 10px;
+  margin: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  height: 225px;
+  width: 500px;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.comment-body {
+}
+
+.comments-username {
+  padding: 10px;
+  margin: 10px;
+  background-color: white;
+  border-radius: 10px;
 }
 
 .article-container {
@@ -172,25 +349,49 @@ li {
   padding: 7px;
 }
 
+.single-article {
+  display: flex;
+  flex-direction: column;
+  background-color: #e6d3ec;
+  padding: 10px;
+  padding-bottom: 10px;
+  margin: 0.25rem;
+}
+
 /* everything with topic class colour coded */
 .topic {
   padding: 5px;
   margin: 5px;
   border: solid 1px;
+  border-left-width: 30px;
+  border-left-color: #e6d3ec;
+  border-right-width: 30px;
+  border-right-color: #e6d3ec;
   border-radius: 20px;
 }
 
 .user {
   padding: 5px;
+  margin: 10px;
   border: solid 1px;
   border-radius: 20px;
+  border-left-width: 30px;
+  border-left-color: lightgray;
+  border-right-width: 30px;
+  border-right-color: lightgray;
 }
 .articles-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: auto;
   padding-bottom: 10px;
 }
 
 .article-card {
   padding: 5px;
+  display: grid;
+  justify-self: auto;
+  align-items: center;
 }
 
 Footer {
@@ -199,11 +400,15 @@ Footer {
   padding: 5px;
 }
 
-img {
+.header-avatar-img {
   max-width: 25px;
   padding: 5px;
   display: flex;
   object-fit: cover;
+}
+
+.top-right-header {
+  align-self: flex-end;
   align-items: flex-end;
 }
 /* 
