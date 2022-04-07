@@ -1,46 +1,40 @@
-import { React, useState, useEffect } from "react";
+import { React, useState, useEffect, useContext } from "react";
 import ArticleItem from "./ArticleItem";
+import Loading from "./IsLoading"
 import * as api from "./api/api-articles"
 import {useParams} from 'react-router-dom'
-// import {SearchBar, List} from './SearchBar'
-import loading from '../5.gif'
+import FilterDropdown from "./FilterDropdown";
+import {userContext} from "./UserContext"
+import Errors from "./Errors";
 
 
 const Articles = () => {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [orderBy, setOrderBy] = useState("DESC")
+  const [sortBy, setSortBy] = useState("created_at")
+  const [error, setIsError] = useState(false)
   const { topic } = useParams()
+  const {loggedInUser} = useContext(userContext)
 
   useEffect(() => {
-    if (topic !== undefined) {
-      api.getArticlesByTopic(topic).then((articlesByTopic) => {
-       setArticles(articlesByTopic)
+      api.getAllArticles(sortBy, orderBy, topic).then((articles) => {
+       setArticles(articles)
        setIsLoading(false)
-       return articlesByTopic
+       return articles
+      }).catch(() => {
+        setIsError(true)
       })
-      
-    } else {
-    api.getAllArticles().then((articles) => {
-      setArticles(articles);
-      setIsLoading(false);
-      return articles;
-    });
-  }
-}, [topic])
+}, [sortBy, orderBy, topic])
 
-  return isLoading ? <img className="loading" src={loading} alt="spinning loading wheel icon to signify page is loading"></img> : 
+
+if (error) return <Errors err={`Sorry, topic ${topic} cannot be found`} />
+
+  return isLoading ? <Loading /> : 
     <div className="articles-list">
-
-      <select className="dropdown-sort-by">
-      <option value="newest first">articles (newest)</option>
-      <option value="oldest first">articles (oldest)</option>
-        <option value="votes">votes</option>
-        <option value="comments">comments</option>
-      </select>
-
-       <p>Here is your latest scoop...</p>
-      {/* <SearchBar articles={articles}/>
-      <List articles={articles} /> */}
+      <FilterDropdown articles={articles} orderBy={orderBy} sortBy={sortBy}
+      setOrderBy={setOrderBy} setSortBy={setSortBy}/>
+       <p>Hello {loggedInUser.username}, here is your latest scoop...</p>
       {articles.map(({ article_id, title, topic, author, body, votes, created_at, comment_count }) => {
         return (
           <li key={article_id}>
@@ -54,9 +48,6 @@ const Articles = () => {
             publish_date={created_at}
             comments={comment_count}
           />
-          {/* <Article article_id={article_id}
-           /> */}
-           {/* <VoteAdder articles={articles}/> */}
           </li>
         )
       })}

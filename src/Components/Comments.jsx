@@ -1,33 +1,38 @@
-import { useEffect, useState} from 'react'
-import {useParams} from 'react-router-dom'
-import * as api from "./api/api-articles"
+import { useEffect, useState, useContext } from "react";
+import { useParams } from "react-router-dom";
+import * as api from "./api/api-articles";
+import CommentAdder from "./CommentAdder";
+import { userContext } from "./UserContext";
+import CommentCard from "../Components/CommentCard";
 
-const Comments = (props) => {
-    const { article_id } = useParams()
-    const [comments, setComments] = useState([])
+const Comments = () => {
+  const { article_id } = useParams();
+  const [comments, setComments] = useState([]);
+  const { loggedInUser } = useContext(userContext);
 
-    useEffect(() => {
-        api.getCommentsByArticleId(article_id).then((comments) => {
-            setComments(comments)
-    })
-}, [article_id])
+  useEffect(() => {
+    api.getCommentsByArticleId(article_id).then((allComments) => {
+      console.log(allComments);
+      setComments(allComments);
+    });
+  }, []);
 
-// const { author, body, comment_id } = comments
-
-    return (
-        <div className="comments">
-        <ul>
-            {comments.map(({ author, body, comment_id}) => {
-                return (
-                    <li key={comment_id}>
-                        <dt>username: {author}</dt>
-                        <p>{body}</p>
-                    </li>
-                )
-            })}
-        </ul>
-        </div>
-    )
-}
+  return (
+    <div className="comments">
+      {loggedInUser.username === "" ? (
+        "Got something to say? Log in to post your comment"
+      ) : (
+        <CommentAdder
+          setComments={setComments}
+          comments={comments}
+          article_id={article_id}
+        />
+      )}
+      {comments.map((comment) => {
+        return <CommentCard comment={comment} setComments={setComments} />;
+      })}
+    </div>
+  );
+};
 
 export default Comments;

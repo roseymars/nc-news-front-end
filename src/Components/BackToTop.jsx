@@ -1,9 +1,35 @@
-import React from 'react'
-// component that user can click and takes them back to top of page
-// try and make floating, if not above the footer will be fine 
+import React, { useState, useEffect } from "react";
+import { FaArrowCircleUp } from "react-icons/fa";
+
 const BackToTop = () => {
-    return (
-    <p>Take me back to the top</p>
-    )}
+  const [showScroll, setShowScroll] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", checkScrollTop);
+    return function cleanup() {
+      window.removeEventListener("scroll", checkScrollTop);
+    };
+  });
+
+  const checkScrollTop = () => {
+    if (!showScroll && window.pageYOffset > 400) {
+      setShowScroll(true);
+    } else if (showScroll && window.pageYOffset <= 400) {
+      setShowScroll(false);
+    }
+  };
+
+  const scrollTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  return (
+    <FaArrowCircleUp
+      className="scrollTop"
+      onClick={scrollTop}
+      style={{ height: 50, display: showScroll ? "flex" : "none" }}
+    />
+  );
+};
 
 export default BackToTop;
