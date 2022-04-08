@@ -114,6 +114,9 @@ a:focus {
 .login-user-avatar {
   border-radius: 5px;
   border-color: white;
+  background-color: slateblue;
+  color: white;
+  padding: 5px 10px 5px 10px;
 }
 
 #nc-news-logo {
