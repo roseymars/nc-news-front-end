@@ -323,7 +323,7 @@ a {
 @media screen and (max-width: 600px) {
   .navbar {
     float: none;
-    width: 75%;
+    /* width: 75%; */
   }
   .topic-names {
     padding-right: 5px;
@@ -335,6 +335,7 @@ a {
     padding-left: 5px;
     text-decoration: lightgray;
   }
+
   .user-gallery {
     display: flex;
     flex-direction: column;

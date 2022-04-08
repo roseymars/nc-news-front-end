@@ -15,7 +15,6 @@ const ArticleItem = ({
   const formattedDate = publish_date.slice(0, 10);
 
   return (
-    <div className="article-item-home-page">
       <article className="article-card">
         <Link to={`/articles/${article_id}`}>
           <h3 className="article-header">{title}</h3>
@@ -37,7 +36,6 @@ const ArticleItem = ({
           </dl>
         </div>
       </article>
-    </div>
   );
 };
 
