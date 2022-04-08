@@ -10,18 +10,12 @@ export const getAllArticles = (sort_by, order, topic) => {
     .then(({ data: { articles } }) => {
       return articles;
     });
-  // .catch((err) => {
-  //   console.log(err);
-  // });
 };
 
 export const getAllTopics = () => {
   return newsApi.get(`/topics`).then(({ data: { topics } }) => {
     return topics;
   });
-  // .catch((err) => {
-  //   console.log(err);
-  // });
 };
 
 export const getArticlesByTopic = (topic) => {
@@ -30,9 +24,6 @@ export const getArticlesByTopic = (topic) => {
     .then(({ data: { articles } }) => {
       return articles;
     });
-  // .catch((err) => {
-  //   console.log(err);
-  // });
 };
 
 export const getArticleById = (article_id) => {
@@ -61,13 +52,7 @@ export const postCommentByArticleId = (article_id, body) => {
     .then(({ data: { comment } }) => {
       return comment;
     });
-  // .catch((err) => {
-  //   console.log(err);
-  // });
 };
-// .then(({ data: { comments } }) => {
-//   return comments;
-// });
 
 export const getAllUsernames = () => {
   return newsApi.get(`/users`).then(({ data: { users } }) => {
@@ -82,7 +67,5 @@ export const getOldestArticles = () => {
 };
 
 export const deleteCommentByCommentId = (comment_id) => {
-  return newsApi.delete(`/comments/${comment_id}`).then((res) => {
-    console.log(res);
-  });
+  return newsApi.delete(`/comments/${comment_id}`);
 };
