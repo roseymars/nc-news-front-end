@@ -266,6 +266,24 @@ a:focus {
   width: 100%;
 }
 
+.comment-adder-form {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.comment-submit-btn {
+  margin-left: 10px;
+  border-radius: 5px;
+  border-color: white;
+  background-color: palegreen;
+  border: none;
+}
+
+#comment-input {
+  margin-left: 10px;
+}
+
 a {
   color: black;
 }
@@ -278,17 +296,7 @@ a {
   text-align: start;
   display: flex;
   flex-direction: column;
-  /* justify-content: flex-start; */
 }
-
-/* .navbar {
-  border: solid 3px red;
-  display: inline-flex;
-  padding: 10px;
-  padding-bottom: 35px;
-  width: 25px;
-  height: 25px;
-} */
 
 .navbar-links {
   border: solid 3px slateblue;
@@ -314,12 +322,6 @@ a {
   border-width: 10px;
 }
 
-/* #filter-boxes {
-  width: 10%;
-  padding-left: 5px;
-  padding-bottom: 5px;
-  align
-} */
 
 @media screen and (max-width: 600px) {
   .navbar {

@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import * as api from "./api/api-articles";
 import { userContext } from "./UserContext";
+import { TiTickOutline } from "react-icons/ti";
 
 const CommentAdder = ({ setComments }) => {
   const [body, setBody] = useState({ username: "", body: "" });
@@ -28,22 +29,23 @@ const CommentAdder = ({ setComments }) => {
 
   return (
     <>
-      <form onSubmit={handlePost}>
-        <label>
-          Got something to say? Post your comment here:
-          <input
-            type="text"
-            required
-            value={body.body}
-            onChange={(e) => {
-              setBody({
-                username: loggedInUser.username,
-                body: e.target.value,
-              });
-            }}
-          />
-        </label>
-        <button type="submit">Submit your comment!</button>
+      <form className="comment-adder-form" onSubmit={handlePost}>
+        <label>Got something to say? Post your comment here: </label>
+        <input
+          type="text"
+          id="comment-input"
+          required
+          value={body.body}
+          onChange={(e) => {
+            setBody({
+              username: loggedInUser.username,
+              body: e.target.value,
+            });
+          }}
+        />
+        <button className="comment-submit-btn" type="submit">
+          <TiTickOutline size={25} color={"green"} />
+        </button>
       </form>
       {isError ? <p>Review not submitted, please try again</p> : null}
     </>
@@ -51,4 +53,3 @@ const CommentAdder = ({ setComments }) => {
 };
 
 export default CommentAdder;
-
