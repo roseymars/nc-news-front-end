@@ -4,7 +4,7 @@
 
 This project integrates with my [Back-end API](https://github.com/roseymars/NC-News), which I have used in order to render all of the data onto my project.
 
-When you visit the site, by default you are not logged in. In order to log in, you can click the profile page icon and choose from the list of users. For simplicity sake, no credentials are needed and you can switch user as many times as you like. 
+When you visit the site, by default you are not logged in. In order to log in, you can click the log in button located on the top right corner of the site and choose from the list of users. For simplicity sake, no credentials are needed and you can switch user as many times as you like. 
 
 **After selecting a user, you will be able to:**
 
