@@ -50,7 +50,6 @@ const Article = () => {
         {/* <dt>Votes: {votes}</dt> */}
         <dt>Date of publish: {created_at.slice(0, 10)}</dt>
         <dt>Comments: {comment_count}</dt>
-        {/* {loggedInUser.username === "" ?  <Link className="log-in-to-like" to={`/users`}>(Like this post? Log in to show your love)</Link> :  */}
         <VoteAdder votes={votes} author={author} />
       </dl>
       <Comments />

@@ -195,11 +195,6 @@ a:focus {
   color: red;
 }
 
-/* .current {
-  li {
-    border-bottom: 2px solid black;
-  }
-} */
 .article-header {
   background-color: #e6d3ec;
   border-radius: 20px;
@@ -445,6 +440,7 @@ Footer {
   color: gray;
   padding: 5px;
 }
+
 
 .header-avatar-img {
   max-width: 25px;
