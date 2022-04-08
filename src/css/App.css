@@ -135,6 +135,7 @@ a:focus {
   background-color: #d4b2f1;
   border-radius: 5px;
   margin: 10px;
+  padding: 8px;
 }
 
 .user-login-btn {
