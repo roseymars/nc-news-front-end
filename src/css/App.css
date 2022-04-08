@@ -366,9 +366,8 @@ li {
 
 .comments {
   padding-bottom: 50px;
-}
-
-.comment-body {
+  display: grid;
+  justify-content: center;
 }
 
 .comments-username {

@@ -47,7 +47,6 @@ const Article = () => {
         <dt>{body} </dt>
         <dt className="topic">topic: {topic}</dt>
         <dt className="user">author: {author}</dt>
-        {/* <dt>Votes: {votes}</dt> */}
         <dt>Date of publish: {created_at.slice(0, 10)}</dt>
         <dt>Comments: {comment_count}</dt>
         <VoteAdder votes={votes} author={author} />
