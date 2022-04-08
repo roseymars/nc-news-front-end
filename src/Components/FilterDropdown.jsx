@@ -11,7 +11,7 @@ const FilterDropdown = ({ setOrderBy, setSortBy, sortBy, orderBy }) => {
     }
 
     return (
-        <form>
+        <form id="filter-boxes">
             <label> Sort By: </label>
         <select className="dropdown-sort-by" value={sortBy} onChange={handleSortBy}>
       <option value="author">Author</option>

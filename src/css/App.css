@@ -12,6 +12,11 @@
 #user-time {
   display: flex;
   justify-content: flex-end;
+  align-items: flex-end;
+  align-self: flex-end;
+  padding-left: 20px;
+  padding-top: 10px;
+  color:#d4b2f1;
 }
 
 .scrollTop {
@@ -50,7 +55,6 @@
   padding: 10px;
   margin: 1px;
 }
-
 
 #delete-comment-btn {
   color: white;
@@ -109,12 +113,12 @@ a:focus {
 }
 
 .login-user-avatar {
-  border-radius: 20px;
+  border-radius: 5px;
   border-color: white;
 }
 
 #nc-news-logo {
-  max-width: 350px;
+  max-width: 120px;
   padding: 0px;
   margin: 0px;
 }
@@ -156,14 +160,18 @@ a:focus {
   margin-right: 25px;
   padding: 5px;
   border-radius: 10px;
-  background-color: yellow;
+  border-color: #4a0785;
+  border-width: 3px;
+  background-color: lavender;
 }
 
 .dropdown-order-by {
   margin-right: 25px;
-  padding: 2px;
+  padding: 5px;
   border-radius: 10px;
-  background-color: yellow;
+  border-width: 3px;
+  border-color: #4a0785;
+  background-color: lavender;
 }
 
 .user-list-avatar {
@@ -182,11 +190,6 @@ a:focus {
 
 .read-more {
   color: red;
-}
-.sticky-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
 }
 
 /* .current {
@@ -224,16 +227,33 @@ a:focus {
   border-color: #cd7d7d;
   padding: 0.5rem;
 }
+
+/* .header-contents {
+  display: flex;
+  
+} */
+
+.logo-test {
+  display: flex;
+  justify-content: flex-start;
+  
+}
 #header-home-link {
-  color: black;
-  padding: 5px;
-  padding-right: 15px;
-  text-decoration-color: purple;
+  color: white;
+  display: flex;
+  justify-content: left;
+  align-self: center;
+  align-items: center;
+  align-content: center;
+  text-decoration: none;
+
 }
 .navbar {
-  display: flex;
-  flex-flow: row wrap;
+  display: grid;
   justify-content: center;
+  border-color: #4a0785;
+  padding: 10px;
+  margin: 10px;
 }
 
 .nav-bar-box {
@@ -245,42 +265,61 @@ a:focus {
   width: 100%;
 }
 
-.Header {
+a {
   color: black;
+}
+
+.Header {
   font-family: "Lora", serif;
   font-family: "Montserrat", sans-serif;
   padding: 10px;
-  /* border: solid 3px red; */
+  border-bottom: solid 3px #4a0785;
   text-align: start;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  flex-direction: column;
+  /* justify-content: flex-start; */
 }
 
-.navbar {
+/* .navbar {
+  border: solid 3px red;
   display: inline-flex;
   padding: 10px;
   padding-bottom: 35px;
   width: 25px;
   height: 25px;
-}
+} */
 
 .navbar-links {
-  margin: 2px;
-  display: flex;
-  align-items: center;
+  border: solid 3px slateblue;
+  background-color: slateblue;
+  padding: 0px;
+  margin-bottom: 10px;
   justify-content: center;
   font-size: 2rem;
   border-width: 10px;
 }
 
+.active {
+  background-color:#4a0785;
+  color: #fff;
+  border-radius: 3px;
+  
+}
+
 .topic-names {
   padding-right: 50px;
-  padding-left: 10px;
-  text-decoration: lightgray;
+  padding-left: 55px;
+  text-decoration: black;
   border-color: black;
   border-width: 10px;
 }
+
+/* #filter-boxes {
+  width: 10%;
+  padding-left: 5px;
+  padding-bottom: 5px;
+  align
+} */
 
 @media screen and (max-width: 600px) {
   .navbar {
@@ -325,6 +364,10 @@ li {
   align-items: center;
   justify-content: center;
   align-content: center;
+}
+
+.comments {
+  padding-bottom:50px;
 }
 
 .comment-body {
@@ -384,7 +427,7 @@ li {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: auto;
-  padding-bottom: 10px;
+  padding-bottom: 50px;
 }
 
 .article-card {
@@ -403,46 +446,21 @@ Footer {
 .header-avatar-img {
   max-width: 25px;
   padding: 5px;
-  display: flex;
+  /* display: flex; */
   object-fit: cover;
 }
 
 .top-right-header {
+  display:flex;
+  flex-direction: column;
   align-self: flex-end;
-  align-items: flex-end;
-}
-/* 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+  position:absolute;
+
+}  
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-} */
-
-/* .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-} */
-
-/* .App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
+} 

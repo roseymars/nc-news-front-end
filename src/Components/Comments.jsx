@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import * as api from "./api/api-articles";
 import CommentAdder from "./CommentAdder";
 import { userContext } from "./UserContext";
-import CommentCard from "../Components/CommentCard";
+import CommentCard from "./CommentCard";
 
 const Comments = () => {
   const { article_id } = useParams();
