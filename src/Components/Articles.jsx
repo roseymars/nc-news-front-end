@@ -75,6 +75,3 @@ const Articles = () => {
 };
 
 export default Articles;
-
-
-// {loggedInUser.username.length > 0 ? <p>Hello ${loggedInUser.username}, here is your latest scoop...</p> : <p>Hello, here is your latest scoop...</p>}
