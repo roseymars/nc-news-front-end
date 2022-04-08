@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  padding: 10px;
 }
 
 @media all and (max-width: 500px) {
@@ -16,7 +15,7 @@
   align-self: flex-end;
   padding-left: 20px;
   padding-top: 10px;
-  color:#d4b2f1;
+  color: #d4b2f1;
 }
 
 .scrollTop {
@@ -159,7 +158,7 @@ a:focus {
 .dropdown-sort-by {
   margin-right: 25px;
   padding: 5px;
-  border-radius: 10px;
+  border-radius: 5px;
   border-color: #4a0785;
   border-width: 3px;
   background-color: lavender;
@@ -168,7 +167,7 @@ a:focus {
 .dropdown-order-by {
   margin-right: 25px;
   padding: 5px;
-  border-radius: 10px;
+  border-radius: 5px;
   border-width: 3px;
   border-color: #4a0785;
   background-color: lavender;
@@ -236,7 +235,6 @@ a:focus {
 .logo-test {
   display: flex;
   justify-content: flex-start;
-  
 }
 #header-home-link {
   color: white;
@@ -246,7 +244,6 @@ a:focus {
   align-items: center;
   align-content: center;
   text-decoration: none;
-
 }
 .navbar {
   display: grid;
@@ -300,10 +297,9 @@ a {
 }
 
 .active {
-  background-color:#4a0785;
+  background-color: #4a0785;
   color: #fff;
   border-radius: 3px;
-  
 }
 
 .topic-names {
@@ -367,7 +363,7 @@ li {
 }
 
 .comments {
-  padding-bottom:50px;
+  padding-bottom: 50px;
 }
 
 .comment-body {
@@ -451,16 +447,14 @@ Footer {
 }
 
 .top-right-header {
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-self: flex-end;
-  position:absolute;
-
-}  
-
+  position: absolute;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-} 
+}
