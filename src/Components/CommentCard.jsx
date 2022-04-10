@@ -30,6 +30,7 @@ const CommentCard = ({ comment, setComments }) => {
     return <h1 className="deleted-comment">{isDeleted}</h1>;
   }
 
+
   if (isError) {
     return <Errors />;
   }
