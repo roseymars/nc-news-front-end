@@ -392,7 +392,6 @@ a {
     text-decoration: lightgray;
   }
   .dropdown-sort-by {
-    margin-right: 25px;
     padding: 2px;
     border-radius: 5px;
     border-color: #4a0785;
@@ -400,7 +399,6 @@ a {
     background-color: lavender;
   }
   .dropdown-order-by {
-    margin-right: 25px;
     margin-top: 5px;
     padding: 2px;
     border-radius: 5px;
