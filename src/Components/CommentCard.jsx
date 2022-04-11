@@ -27,7 +27,7 @@ const CommentCard = ({ comment, setComments }) => {
     setTimeout(() => {
       setDeleteMsg(" ");
     }, 10000);
-    return <h1 className="deleted-comment">{isDeleted}</h1>;
+    return <h3 className="deleted-comment">{isDeleted}</h3>;
   }
 
   if (isError) {

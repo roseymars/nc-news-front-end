@@ -321,7 +321,6 @@ a {
 @media screen and (max-width: 600px) {
   .navbar {
     float: none;
-    /* width: 75%; */
   }
   .topic-names {
     padding-right: 5px;
@@ -332,6 +331,23 @@ a {
     padding-right: 5px;
     padding-left: 5px;
     text-decoration: lightgray;
+  }
+  .dropdown-sort-by {
+    margin-right: 25px;
+    padding: 2px;
+    border-radius: 5px;
+    border-color: #4a0785;
+    border-width: 3px;
+    background-color: lavender;
+  }
+  .dropdown-order-by {
+    margin-right: 25px;
+    margin-top: 5px;
+    padding: 2px;
+    border-radius: 5px;
+    border-color: #4a0785;
+    border-width: 3px;
+    background-color: lavender;
   }
 
   .user-gallery {

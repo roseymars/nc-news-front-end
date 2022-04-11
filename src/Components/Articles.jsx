@@ -26,7 +26,8 @@ const Articles = () => {
       })
       .catch(() => {
         setIsError(true);
-      });
+      })
+      setIsError(false);
   }, [sortBy, orderBy, topic]);
 
   if (error) return <Errors err={`Sorry, topic ${topic} cannot be found`} />;
