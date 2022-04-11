@@ -364,8 +364,6 @@ a {
     flex-direction: column;
     height: 250px;
     width: 365px;
-    /* justify-content: center; */
-   
   }
 
   .comment-container {
@@ -467,7 +465,6 @@ li {
   margin: 0.25rem;
 }
 
-/* everything with topic class colour coded */
 .topic {
   padding: 5px;
   margin: 5px;
@@ -490,7 +487,6 @@ li {
   border-right-color: lightgray;
 }
 
-
 .article-card {
   padding: 5px;
   display: grid;
@@ -503,7 +499,6 @@ Footer {
   color: gray;
   padding: 5px;
 }
-
 
 .header-avatar-img {
   max-width: 25px;
@@ -519,8 +514,3 @@ Footer {
   position: absolute;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
