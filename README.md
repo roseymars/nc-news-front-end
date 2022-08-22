@@ -1,4 +1,4 @@
-# NEWS OF THE NORTH (NC NEWS) #
+# NEWS OF THE NORTH #
 
 ## Welcome to the Front-end part to my NC News Full Stack project ##
 
