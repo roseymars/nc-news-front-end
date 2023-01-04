@@ -1,8 +1,8 @@
 # NEWS OF THE NORTH #
 
-## Welcome to the Front-end part to my NC News Full Stack project ##
+## Welcome to the Frontend section of my NC News Full Stack project ##
 
-This project integrates with my [Back-end API](https://github.com/roseymars/NC-News), which I have used in order to render all of the data onto my project.
+This project integrates with my [Backend API](https://github.com/roseymars/NC-News), which I have used in order to render all of the data onto my project.
 
 When you visit the site, by default you are not logged in. In order to log in, you can click the log in button located on the top right corner of the site and choose from the list of users. For simplicity sake, no credentials are needed and you can switch user as many times as you like. 
 
